@@ -1,0 +1,41 @@
+redisdb:
+  image: redis:2.8
+  command: redis-server --appendonly yes
+  expose:
+    - "6379"
+  ports:
+    - "6379:6379"
+  volumes:
+    - "docker/data/redis:/var/lib/redis"
+db2:
+  build: ./docker/db2
+  expose:
+    - "50000"
+  ports:
+    - "50000:50000"
+  privileged: true
+  volumes:
+    - "docker/data/db2:/home/db2inst1"
+  environment:
+    DB2_DATABASES: "develop test prod"
+opendj:
+  build: ./docker/opendj
+  expose:
+    - "1389"
+  ports:
+    - "1389:1389"
+  volumes:
+    - "docker/data/opendj:/data/opendj"
+webdb2:
+  build: .
+  command: /sbin/setuser app bundle exec rails s
+  expose:
+    - "3000"
+  ports:
+    - "3000:3000"
+  volumes:
+    - ".:/home/app/sgds"
+  links:
+    - db2
+    - redisdb
+    - opendj

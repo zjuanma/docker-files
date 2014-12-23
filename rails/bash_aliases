@@ -1,0 +1,25 @@
+alias cdev='cd ~/dev'
+alias cda='cd ~/dev/aspgems'
+alias cdt='cd ~/dev/telefonica'
+alias cdoc='cd  ~/Documentos'
+alias hg='history | grep -i '
+alias fg='find . -type f | grep -v svn | grep -v git| grep -v tmp | grep -v log|xargs -n 1 grep -Hi '
+alias pg='ps -au | grep -i '
+alias gvim="UBUNTU_MENUPROXY=0 gvim"
+alias sincro="unison dev"
+alias terminator="/usr/bin/terminator -l dev"
+
+
+alias be='bundle exec '
+alias bep='bundle exec passenger '
+alias bil='bundle install; cp Gemfile.lock Gemfile.local.lock; bundle install --gemfile Gemfile.local'
+alias bel='BUNDLE_GEMFILE=Gemfile.local bundle exec '
+
+#Merge branch. Usage: merge_branch branch_name
+f_merge_branch() { git co master && git pull && git rebase master $1 && git co master && git merge --ff-only master $1 ;}
+alias merge_branch=f_merge_branch
+
+alias cactualizar='sudo apt-get upgrade -s | grep -v Inst | grep -v Conf'
+alias actualizar='sudo apt-get update && sudo apt-get upgrade -y --force-yes'
+
+alias whats-my-ip="curl -s checkip.dyndns.org | grep -Eo '[0-9\.]+'"

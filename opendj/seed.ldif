@@ -1,0 +1,71 @@
+version: 1
+dn: dc=myldap
+objectClass: domain
+objectClass: top
+dc: myldap
+
+dn: ou=People,dc=myldap
+objectClass: organizationalUnit
+objectClass: top
+ou: People
+
+dn: cn=entidad1,ou=People,dc=myldap
+objectClass: person
+objectClass: top
+objectClass: SGDS
+cn: entidad1
+SGDSAcceso: SI
+SGDSEntidad: CASER
+SGDSEntidad: AXA SEGUROS GENERALES
+SGDSTipoUsuario: ENTIDAD_G
+SGDSRamo: 04
+SGDSRamo: 13
+SGDSRamo: 21
+SGDSTipoTramite: FIRMA
+sn: sgds
+userPassword:: e1NTSEF9dExveFdndU5tK08xNGxIbVdYYWExQUM4Ti9IQ0NTam9WTldSdVE9PQ==
+
+dn: cn=entidad2,ou=People,dc=myldap
+objectClass: person
+objectClass: top
+objectClass: SGDS
+cn: entidad2
+SGDSAcceso: SI
+SGDSEntidad: AXA SEGUROS GENERALES
+SGDSTipoUsuario: ENTIDAD_G
+sn: sgds
+userPassword:: e1NTSEF9dExveFdndU5tK08xNGxIbVdYYWExQUM4Ti9IQ0NTam9WTldSdVE9PQ==
+
+dn: cn=consulta,ou=People,dc=myldap
+objectClass: person
+objectClass: top
+objectClass: SGDS
+cn: consulta
+SGDSAcceso: SI
+SGDSEntidad: CASER
+SGDSEntidad: AXA SEGUROS GENERALES
+SGDSTipoUsuario: ENTIDAD_C
+sn: sgds
+userPassword:: e1NTSEF9dExveFdndU5tK08xNGxIbVdYYWExQUM4Ti9IQ0NTam9WTldSdVE9PQ==
+
+dn: cn=tirea,ou=People,dc=myldap
+objectClass: person
+objectClass: top
+objectClass: SGDS
+cn: tirea
+SGDSAcceso: SI
+SGDSTipoUsuario: ENTIDAD_G
+sn: sgds
+userPassword:: e1NTSEF9dExveFdndU5tK08xNGxIbVdYYWExQUM4Ti9IQ0NTam9WTldSdVE9PQ==
+
+dn: cn=entidad3,ou=People,dc=myldap
+objectClass: person
+objectClass: top
+objectClass: SGDS
+cn: entidad3
+SGDSAcceso: NO
+SGDSEntidad: CASER
+SGDSEntidad: AXA SEGUROS GENERALES
+SGDSTipoUsuario: ENTIDAD_G
+sn: sgds
+userPassword:: e1NTSEF9dExveFdndU5tK08xNGxIbVdYYWExQUM4Ti9IQ0NTam9WTldSdVE9PQ==
